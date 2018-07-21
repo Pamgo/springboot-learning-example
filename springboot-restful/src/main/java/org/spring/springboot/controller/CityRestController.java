@@ -14,7 +14,6 @@ import java.util.List;
  * Created by bysocket on 07/02/2017.
  */
 @RestController
-@RequestMapping("/cityC")
 public class CityRestController {
 
     @Autowired
@@ -30,11 +29,6 @@ public class CityRestController {
         return cityService.findAllCity();
     }
 
-    /**
-     * @RequestBody 这里注解用于读取请求体 boy 的数据，
-     * 通过 HttpMessageConverter 解析绑定到对象中
-     * @param city
-     */
     @RequestMapping(value = "/api/city", method = RequestMethod.POST)
     public void createCity(@RequestBody City city) {
         cityService.saveCity(city);
